@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { useRoutes, Routes, Route } from "react-router-dom";
-import Home from "./components/home";
+import { useRoutes, Routes, Route, Navigate } from "react-router-dom";
+import Dashboard from "./pages/dashboard";
 import routes from "tempo-routes";
 
 function App() {
@@ -8,7 +8,8 @@ function App() {
     <Suspense fallback={<p>Loading...</p>}>
       <>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
       </>

@@ -1,8 +1,7 @@
+import { Navigate } from "react-router-dom";
+
 function Home() {
-  return (
-    <div className="w-screen h-screen">
-    </div>
-  )
+  return <Navigate to="/dashboard" replace />;
 }
 
-export default Home
+export default Home;
